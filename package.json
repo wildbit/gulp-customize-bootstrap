@@ -1,0 +1,30 @@
+{
+  "name": "gulp-customize-bootstrap",
+  "version": "0.0.1",
+  "description": "A gulp plugin that overrides Bootstrap's core LESS files without modifying Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "gulpplugin",
+    "bootstrap"
+  ],
+  "author": {
+    "name": "Derek Rushforth",
+    "email": "derek@wildbit.com",
+    "url": "wildbit.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.12.0",
+    "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "event-stream": "^3.3.2",
+    "gulp-data": "^1.2.1",
+    "mocha": "^2.4.5",
+    "vinyl": "^1.1.1"
+  }
+}
