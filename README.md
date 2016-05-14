@@ -9,7 +9,7 @@ npm install --save-dev gulp-customize-bootstrap
 ## Usage
 Ensure that you have installed bootstraps npm package.
 
-```
+```js
 var gulp = require('gulp');
 var customizeBootstrap = require('gulp-customize-bootstrap');
 
