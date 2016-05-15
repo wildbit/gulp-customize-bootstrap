@@ -9,10 +9,9 @@ var PluginError = gutil.PluginError;
 const PLUGIN_NAME = 'gulp-customize-bootstrap';
 
 module.exports = function(opt) {
-  opt = opt || {
-      manifest: 'node_modules/bootstrap/less/bootstrap.less',
-      dest: 'bootstrap.less'
-    };
+  opt = opt || {};
+  opt.manifest = opt.manifest || 'node_modules/bootstrap/less/bootstrap.less';
+  opt.dest = opt.dest || 'bootstrap.less';
 
   var overrides = [];
   var srcPath = '';
@@ -21,7 +20,6 @@ module.exports = function(opt) {
 
   // Get bootstrap manifest files
   var manifest = parseManifest(opt.manifest);
-
 
   // Read the bootstrap manifest
   function parseManifest(filename) {

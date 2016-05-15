@@ -1,12 +1,16 @@
 {
   "name": "gulp-customize-bootstrap",
-  "version": "0.0.3",
-  "description": "A gulp plugin that overrides Bootstrap's core LESS files without modifying Bootstrap",
+  "version": "0.0.4",
+  "description": "A gulp plugin that overrides Bootstrap's core Sass or Less files without modifying Bootstrap",
   "repository": "wildbit/gulp-customize-bootstrap",
   "main": "index.js",
   "keywords": [
     "gulpplugin",
-    "bootstrap"
+    "bootstrap",
+    "bootstrap 3",
+    "bootstrap 4",
+    "sass",
+    "less"
   ],
   "author": {
     "name": "Derek Rushforth",
