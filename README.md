@@ -9,20 +9,13 @@ npm install --save-dev gulp-customize-bootstrap
 ```
 
 ## Usage
-This plugin works using Bootstrap’s npm, bower, or static file installs. Just make sure you pass in the correct `manifest` file path.
-
-
-
-### Include in gulpfile.js
-
-```js
-var customizeBootstrap = require('gulp-customize-bootstrap');
-```
+This plugin works using Bootstrap’s npm, bower, or static file installs. Just make sure you pass in the correct Bootstrap less or sass file using `gulp.src`.
 
 
 ### Bootstrap 3 using Less
 
 ```js
+var customizeBootstrap = require('gulp-customize-bootstrap');
 var less = require('gulp-less');
 
 gulp.task('compileBootstrap', function() {
@@ -38,11 +31,14 @@ gulp.task('compileBootstrap', function() {
 
 Make sure that Bootstrap 4 is installed.
 
+
 npm – `npm install bootstrap@4.0.0-alpha.2`
+
 Bower – `bower install bootstrap#v4.0.0-alpha.2`
 
 
 ```js
+var customizeBootstrap = require('gulp-customize-bootstrap');
 var sass = require('gulp-sass');
 
 gulp.task('compileBootstrap', function() {
