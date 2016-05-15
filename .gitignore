@@ -1,4 +1,6 @@
 .idea
 node_modules
-example/styles/bootstrap.less
 test.js
+npm-debug.log
+examples/**/bootstrap.less
+examples/**/bootstrap.scss

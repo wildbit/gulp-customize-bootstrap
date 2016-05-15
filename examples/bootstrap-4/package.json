@@ -1,0 +1,10 @@
+{
+  "name": "gulp-customize-bootstrap-4-example",
+  "version": "1.0.0",
+  "description": "An example that shows you how gulp-customize-bootstrap works",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "gulp": "^3.9.1"
+  }
+}
