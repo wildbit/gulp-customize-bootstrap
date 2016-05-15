@@ -9,7 +9,7 @@ npm install --save-dev gulp-customize-bootstrap
 ```
 
 ## Usage
-Ensure that you installed Bootstrap’s npm package. `npm install bootstrap --save`
+This plugin works with Bootstrap’s npm, bower, or static file installs. Just make sure you pass in the correct `manifest` file path.
 
 ### Include in gulpfile.js
 
@@ -33,7 +33,7 @@ gulp.task('customizeBootstrap', function() {
 
 ### Bootstrap 4 using Sass
 
-Make sure that Bootstrap 4 installed. `npm install bootstrap@4.0.0-alpha.2`.
+Make sure that Bootstrap 4 is installed. `npm install bootstrap@4.0.0-alpha.2`.
 
 ```js
 gulp.task('customizeBootstrap', function() {
