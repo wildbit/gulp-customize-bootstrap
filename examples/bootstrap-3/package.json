@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "bootstrap": "^3.3.6",
-    "bootstrap-sass": "^3.3.6",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0"
   }
 }

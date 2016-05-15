@@ -4,3 +4,4 @@ test.js
 npm-debug.log
 examples/**/bootstrap.less
 examples/**/bootstrap.scss
+examples/**/bootstrap.css

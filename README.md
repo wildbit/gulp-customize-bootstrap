@@ -11,24 +11,28 @@ npm install --save-dev gulp-customize-bootstrap
 ## Usage
 This plugin works using Bootstrap’s npm, bower, or static file installs. Just make sure you pass in the correct `manifest` file path.
 
+
+
 ### Include in gulpfile.js
 
 ```js
 var customizeBootstrap = require('gulp-customize-bootstrap');
 ```
 
+
 ### Bootstrap 3 using Less
 
 ```js
-gulp.task('customizeBootstrap', function() {
-  return gulp.src('styles/less/*.less')
-    .pipe(customizeBootstrap({
-        manifest: 'node_modules/bootstrap/less/bootstrap.less',
-        dest: 'styles/bootstrap.less'
-      }
-    ))
+var less = require('gulp-less');
+
+gulp.task('compileBootstrap', function() {
+  return gulp.src('node_modules/bootstrap/less/bootstrap.less')
+    .pipe(customizeBootstrap('styles/less/*.less'))
+    .pipe(less())
+    .pipe(gulp.dest('styles/'));
 });
 ```
+
 
 ### Bootstrap 4 using Sass
 
@@ -37,30 +41,14 @@ Make sure that Bootstrap 4 is installed.
 npm – `npm install bootstrap@4.0.0-alpha.2`
 Bower – `bower install bootstrap#v4.0.0-alpha.2`
 
+
 ```js
-gulp.task('customizeBootstrap', function() {
-  return gulp.src('styles/scss/*.scss')
-    .pipe(customizeBootstrap({
-        manifest: 'node_modules/bootstrap/scss/bootstrap.scss',
-        dest: 'styles/bootstrap.scss'
-      }
-    ))
+var sass = require('gulp-sass');
+
+gulp.task('compileBootstrap', function() {
+  return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
+    .pipe(customizeBootstrap('styles/scss/*.scss'))
+    .pipe(sass())
+    .pipe(gulp.dest('styles/'));
 });
 ```
-
-
-## Options
-
-### manifest
-
-Tyoe: `String`
-Default: `node_modules/bootstrap/scss/bootstrap.less`
-
-The path to bootstrap’s original manifest stylesheet.
-
-### dest
-
-Type: `String`
-Default: `bootstrap.less`
-
-The destination of your generated manifest file. Requires file extension.
