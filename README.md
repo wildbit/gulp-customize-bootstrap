@@ -1,4 +1,5 @@
-# gulp-customize-bootstrap
+# gulp-customize-bootstrap [![Build Status](https://travis-ci.org/wildbit/gulp-customize-bootstrap.svg?branch=master)](https://travis-ci.org/wildbit/gulp-customize-bootstrap)
+
 A gulp plugin that overrides Bootstrap’s core Less or Sass files without modifying Bootstrap. This is a modified and extended version of [grunt-customize-bootstrap](https://github.com/ianwremmel/grunt-customize-bootstrap).
 
 See our examples for [Bootstrap 3](https://github.com/wildbit/gulp-customize-bootstrap/tree/master/examples/bootstrap-3) and [Bootstrap 4](https://github.com/wildbit/gulp-customize-bootstrap/tree/master/examples/bootstrap-4).
