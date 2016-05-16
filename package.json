@@ -1,9 +1,13 @@
 {
   "name": "gulp-customize-bootstrap",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A gulp plugin that overrides Bootstrap's core Sass or Less files without modifying Bootstrap",
   "repository": "wildbit/gulp-customize-bootstrap",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*.js",
+    "test:watch": "npm test -- --watch"
+  },
   "keywords": [
     "gulpplugin",
     "bootstrap",
@@ -24,9 +28,6 @@
     "lodash": "^4.12.0"
   },
   "devDependencies": {
-    "event-stream": "^3.3.2",
-    "gulp-data": "^1.2.1",
-    "mocha": "^2.4.5",
-    "vinyl": "^1.1.1"
+    "mocha": "^2.4.5"
   }
 }

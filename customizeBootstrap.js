@@ -1,45 +1,45 @@
 var path = require('path');
 var _ = require('lodash');
 
-module.exports = function(config) {
-  // config = {
-  //   srcPath: '',                  // The path of the source manifest
-  //   srcContent: '',               // Content of the source manifest
-  //   overrideFiles: [],            // Array of override includes
-  //   overridePath: ''              // Path of override files
-  // }
+module.exports = {
+  create: function(config) {
+    // TODO: validate config
 
-  // Get bootstrap manifest files
-  var manifest = parseManifest(config.srcContent);
-  manifest = generateNewManifest(manifest, config.overrideFiles);
+    // config = {
+    //   srcPath: '',                  // The path of the source manifest
+    //   srcContent: '',               // Content of the source manifest
+    //   overrideFiles: [],            // Array of override includes
+    //   overridePath: ''              // Path of override files
+    // }
 
+    var existingManifest = this.parseExistingManifest(config.srcContent);
+    return this.processNewManifest(existingManifest, config);
+  },
 
-  // Read the bootstrap manifest
-  function parseManifest(content) {
-
+  parseExistingManifest: function(content) {
     var pattern = /@import "([\w\.-]+)";/g;
     var manifest = [];
     var match;
 
+    // Match and store import statements
     while ((match = pattern.exec(content)) !== null) {
       manifest.push(match[1]);
     }
 
+    // return manifest;
     return manifest;
-  }
+  },
 
-  // Find matches between overrides and manifest
-  function generateNewManifest(manifest, overrides) {
+  processNewManifest: function(content, config) {
     var overridePrefix = path.relative(config.srcPath, config.overridePath);
 
     // Iterate through manifest files
-    return manifest.map(function(filename) {
+    return content.map(function(filename) {
       // Check if overrides matches manifest file
-      var prefix = _.includes(overrides, filename) ? overridePrefix : './';
+      var prefix = _.includes(config.overrideFiles, filename) ? overridePrefix : './';
 
       return '@import "' + path.join(prefix, filename) + '";';
     }).join('\n');
   }
 
-  return manifest
 };

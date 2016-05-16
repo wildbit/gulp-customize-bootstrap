@@ -36,7 +36,7 @@ module.exports = function(overrides) {
 
 
         if (index === (overrideFiles.length-1)) {
-          var newContent = customizeBootstrap({
+          var newContent = customizeBootstrap.create({
             srcPath: path.relative(file.cwd,file.base),
             srcContent: file.contents.toString(),
             overrideFiles: overrideFiles,
